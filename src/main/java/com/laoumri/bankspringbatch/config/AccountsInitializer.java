@@ -19,10 +19,10 @@ public class AccountsInitializer {
             Compte c2 = new Compte(2, 2000.0);
             Compte c3 = new Compte(3, 3000.0);
             Compte c4 = new Compte(4, 4000.0);
+            List accounts = List.of(c1, c2, c3, c4);
+            compteRepository.saveAll(accounts);
 
-            compteRepository.saveAll(List.of(c1, c2, c3, c4));
-
-            log.info("Four accounts have been initialized in the database.");
+            log.info("{} accounts have been initialized in the database.", accounts.size());
         };
     }
 }
